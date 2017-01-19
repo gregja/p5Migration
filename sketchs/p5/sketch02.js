@@ -5,7 +5,7 @@
 
 var a = new Array(500)
 function setup() {
-    createCanvas(700, 500);
+    createCanvas(500, 500);
     var i, j ;
     for (i = 0; i < 500; i++){
         a[i] = new Array(2);
