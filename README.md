@@ -16,3 +16,6 @@ Pour rappel, Processing s’appuie sur le langage Java, tandis que P5.js s’app
 
 Au travers de divers scénarios de migration, et d'un support d'accompagnement au format PDF, ce dépôt propose une méthode de migration, aux développeurs qui en éprouvent le besoin. 
 
+Vous avez la possibilité de voir les différents sketchs en action, via l'URL suivante :
+http://backstages.gregphplab.com/p5Migration/
+
