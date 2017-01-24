@@ -5,7 +5,7 @@
 
 float [][] a = new float[500][2]; 
 void setup() { 
-   size(500, 500); 
+   size(700, 500); 
    for(int i = 0; i < a.length; i++){ 
       for(int j = 0; j < a[i].length; j++){ 
           a[i][j] = random(10,490); 9 

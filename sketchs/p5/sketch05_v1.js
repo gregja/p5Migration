@@ -1,6 +1,8 @@
 // Dream Catcher by Oggy
 // https://www.openprocessing.org/   
 // sketch n° sketch169537
+// Adaptation à P5.js version 2 : utilisation de ES5 avec 
+//   création d'objets via .prototype.
 
 "use strict";
 
@@ -65,12 +67,12 @@ function draw() {
 }
 
 function keyPressed() {
-    if (key > '0' && key <= '6') {
+    if (key > '0' && key <= '9') {
         noiseOn = true;
         nbWeeds = parseInt(key) * 10;
+        weeds = new Array(nbWeeds);
+        // réinitialisation du canvas
         setup();
-        draw();
-        loop();
         return;
     } else {
         if (key == 'x' || key == 'X') {
@@ -94,6 +96,9 @@ function keyPressed() {
 }
 
 var MyColor = function () {
+    this.init();
+}
+MyColor.prototype.init = function () {
     this.minSpeed = .6;
     this.maxSpeed = 1.8;
     this.minR = 200;
@@ -107,8 +112,8 @@ var MyColor = function () {
     this.B = random(this.minB, this.maxB);
     this.Rspeed = (random(1) > .5 ? 1 : -1) * random(this.minSpeed, this.maxSpeed);
     this.Gspeed = (random(1) > .5 ? 1 : -1) * random(this.minSpeed, this.maxSpeed);
-    this.Bspeed = (random(1) > .5 ? 1 : -1) * random(this.minSpeed, this.maxSpeed);
-}
+    this.Bspeed = (random(1) > .5 ? 1 : -1) * random(this.minSpeed, this.maxSpeed);    
+};
 MyColor.prototype.update = function () {
     this.Rspeed = (((this.R += this.Rspeed) > this.maxR) || (this.R < this.minR)) ? -this.Rspeed : this.Rspeed;
     this.Gspeed = (((this.G += this.Gspeed) > this.maxG) || (this.G < this.minG)) ? -this.Gspeed : this.Gspeed;
@@ -166,10 +171,7 @@ SeaWeed.prototype.update = function () {
 
         //mouse interaction
         if (pmouseX != mouse.x || pmouseY != mouse.y) {
-            // var d = new p5.Vector.dist(mouse, this.pos[i]);  !!! WARNING : THIS DOESN'T WORK WITH P5 !!!
-            // var d = mouse.dist(this.pos[i]);    !!! THIS WORKS FINE WITH P5 !!!
-            if (mouse.dist(this.pos[i]) < this.mouseDist) // && pmouseX != mouseX && abs(pmouseX - mouseX) < 12)
-            {  
+            if (p5.Vector.dist(mouse, this.pos[i]) < this.mouseDist) {  
                 var tmpPV = mouse.copy();
                 tmpPV.sub(this.pos[i]);
                 tmpPV.normalize();

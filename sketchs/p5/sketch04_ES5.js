@@ -150,7 +150,7 @@ function setup() {
     d2 = dist(0, 0, w2, h2);
     noStroke();
     neuerStern = new star();
-    //frameRate(9000);
+    frameRate(60);
     background(0);
 }
 
