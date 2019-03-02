@@ -16,3 +16,6 @@ Pour rappel, Processing s’appuie sur le langage Java, tandis que P5.js s’app
 
 Au travers de divers scénarios de migration, et d'un support d'accompagnement au format PDF, ce dépôt propose une méthode de migration, aux développeurs qui en éprouvent le besoin. 
 
+Attention : en créant ce dépôt (qui date de janvier 2017), je m'étais focalisé sur P5 et sur le portage de sketchs 2D exclusivement. Dans un nouveau dépôt créé en janvier 2019, je me suis livré à différentes expériences de portage de sketch Processing 3D, à la fois vers P5 et ProcessingJS. Le lien de ce nouveau dépôt est le suivant :
+
+https://github.com/gregja/pjs3D_experiments/
